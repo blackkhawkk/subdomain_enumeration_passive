@@ -1,0 +1,1 @@
+curl -sk --insecure -H "Authorization: Bearer k40767_RAYxVuzpphfoxkd9sHCm" "https://api.certspotter.com/v1/issuances?domain=$1&include_subdomains=true&expand=dns_names" | jq .[].dns_names | grep -oE "[a-zA-Z0-9._-]+\.$1" | sort -u
